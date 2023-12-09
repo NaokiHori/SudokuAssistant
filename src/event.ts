@@ -105,6 +105,14 @@ export class KeyboardEvents {
         case `ArrowDown`:
         case `ArrowLeft`:
         case `ArrowRight`:
+        case `k`:
+        case `j`:
+        case `h`:
+        case `l`:
+        case `w`:
+        case `s`:
+        case `a`:
+        case `d`:
           {
             event.preventDefault();
             const ref_cell: HTMLElement | null = Board.fetch_selected_cell();
@@ -112,14 +120,14 @@ export class KeyboardEvents {
               break;
             }
             let [row, col]: [number, number] = CellMethod.get_pos(ref_cell);
-            if (`ArrowUp` === event.key) {
+            if (`ArrowUp` === event.key || `k` === event.key || `w` === event.key ) {
               row = (row + BoardSize.Main - 1) % BoardSize.Main;
-            } else if (`ArrowDown` === event.key) {
+            } else if (`ArrowDown` === event.key || `j` === event.key || `s` === event.key) {
               row = (row + BoardSize.Main + 1) % BoardSize.Main;
             }
-            if (`ArrowLeft` === event.key) {
+            if (`ArrowLeft` === event.key || `h` === event.key || `a` === event.key) {
               col = (col + BoardSize.Main - 1) % BoardSize.Main;
-            } else if (`ArrowRight` === event.key) {
+            } else if (`ArrowRight` === event.key || `l` === event.key || `d` === event.key) {
               col = (col + BoardSize.Main + 1) % BoardSize.Main;
             }
             const cell: HTMLElement = Board.get_cell([row, col]);
