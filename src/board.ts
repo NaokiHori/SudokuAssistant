@@ -65,6 +65,14 @@ export class Board {
     }
   }
 
+  static all_clear(): void {
+    Board.unselect_cells();
+    for (const cell of fetch_all_cells()) {
+      CellMethod.update_text(cell, ` `);
+      CellMethod.update_memo(cell, ` `);
+    }
+  }
+
   static initialise(): void {
     // set edit mode
     Mode.change(ModeType.Edit);

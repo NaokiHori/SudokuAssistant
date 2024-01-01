@@ -174,6 +174,14 @@ export class KeyboardEvents {
             Mode.change(ModeType.Memo);
             break;
           }
+        case `R`:
+          {
+            if (Mode.get_current_mode() !== ModeType.Edit) {
+              break;
+            }
+            Board.all_clear();
+            break;
+          }
         default:
           // otherwise N/A for now
           break;

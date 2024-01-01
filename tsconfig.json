@@ -2,7 +2,9 @@
   "compilerOptions": {
     "target": "es6",
     "outDir": "./built",
-    "strict": true
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": ["./src/*"]
 }
